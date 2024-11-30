@@ -1,0 +1,125 @@
+Basic reset for margin, padding, and box sizing
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+    color: #4a4a8f;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"],
+textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #4a4a8f;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3b3b6b;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #4a4a8f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+ul li {
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    border-left: 4px solid #4a4a8f;
+}
+        /* static/style.css */
+
+/* Navbar Styling */
+.navbar .navbar-brand {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.navbar .nav-link {
+    color: #333;
+}
+
+.navbar .nav-link.active {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Page Headings */
+h2 {
+    margin-top: 20px;
+    color: #007bff;
+}
+
+/* Form Styling */
+.contact-form .form-label {
+    font-weight: bold;
+}
+
+.contact-form .btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.contact-form .btn-primary:hover {
+    background-color: #0056b3;
+}

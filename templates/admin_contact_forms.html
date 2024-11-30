@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - View Contact Forms</title>
+    <style>
+        /* Basic styling for body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Container for the entire content */
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header section */
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        h3 {
+            color: #34495e;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        td {
+            background-color: #ecf0f1;
+        }
+
+        tr:hover td {
+            background-color: #e2e7ea;
+        }
+
+        /* Links styling */
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Logout link at the top */
+        .logout-link {
+            font-size: 1.1em;
+            display: inline-block;
+            margin-top: 10px;
+            color: #e74c3c;
+        }
+
+        /* Message when no forms are submitted */
+        .no-forms {
+            text-align: center;
+            font-size: 1.2em;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Admin Dashboard - Contact Form Submissions</h2>
+        <p>Welcome, {{ session['admin_username'] }}! <a class="logout-link" href="{{ url_for('admin_logout') }}">Logout</a></p>
+
+        <h3>Contact Form Submissions</h3>
+        
+        {% if contact_forms %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                        <th>Submitted At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for form in contact_forms %}
+                        <tr>
+                            <td>{{ form.id }}</td>
+                            <td>{{ form.name }}</td>
+                            <td>{{ form.email }}</td>
+                            <td>{{ form.message }}</td>
+                            <td>{{ form.submitted_at }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p class="no-forms">No contact forms have been submitted yet.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

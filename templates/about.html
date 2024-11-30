@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Mail App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Global Variables for Color */
+        :root {
+            --primary-color: #3498db;  /* Blue for buttons, highlights */
+            --secondary-color: #2ecc71;  /* Green for accents */
+            --background-color: #f1f1f1;  /* Soft light background */
+            --text-color: #333;  /* Dark text color for readability */
+            --footer-bg: #222;  /* Dark footer */
+            --footer-text-color: #ccc;  /* Light footer text */
+        }
+
+        /* Ensure body and html take full height */
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: var(--primary-color);
+            border-bottom: 2px solid #2980b9;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .navbar-brand {
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+        }
+
+        .navbar .nav-link {
+            color: #fff;
+            font-size: 1rem;
+            margin-left: 15px;
+        }
+
+        .navbar .nav-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .navbar .nav-link.active {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* Main Content Section */
+        .main-content {
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: linear-gradient(135deg, #fff, var(--primary-color));
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            flex-grow: 1;  /* Allow content to expand and push footer down */
+        }
+
+        .main-content h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .main-content p {
+            font-size: 1.2rem;
+            text-align: center;
+            max-width: 700px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        /* Owner Section Styling */
+        .owner-section {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 30px;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .owner-section h3 {
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        .owner-section p {
+            font-size: 1.2rem;
+            color: #f1f1f1;
+            margin-top: 10px;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: var(--footer-bg);
+            color: var(--footer-text-color);
+            padding: 30px 20px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        footer a {
+            color: var(--footer-text-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hover Effects for Links and Buttons */
+        .nav-link, footer a {
+            transition: color 0.3s ease;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .main-content h2 {
+                font-size: 2rem;
+            }
+
+            .main-content p {
+                font-size: 1rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('home') }}">Mail App</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('about') }}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('contact') }}">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Us Content -->
+    <div class="container main-content">
+        <h2>About Us</h2>
+        <p>Welcome to the Mail Application! We provide a secure and user-friendly platform for sending emails and managing your sent messages. Our goal is to make email communication as smooth and efficient as possible for our users. We are constantly improving our services to ensure a seamless experience for all our customers.</p>
+    </div>
+
+    <!-- Owner Section -->
+    <div class="container owner-section">
+        <h3>Meet the Owner</h3>
+        <p><strong>John Doe</strong> is the founder and visionary behind this Mail App. With years of experience in technology and communication services, John has led the team with a focus on security, ease of use, and innovation. His dedication has shaped the direction and success of this platform, ensuring that it meets the needs of users around the world.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Mail App. All rights reserved.</p>
+        <p>
+            <a href="{{ url_for('about') }}">About Us</a> |
+            <a href="{{ url_for('contact') }}">Contact Us</a> |
+            <a href="{{ url_for('home') }}">Privacy Policy</a>
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
